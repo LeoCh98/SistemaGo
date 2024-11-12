@@ -14,7 +14,7 @@ func Inicio(w http.ResponseWriter, r *http.Request) {
 	//Obtiene la conexion
 	conexionEstablecida, err := db.ConexionBD()
 	if err != nil {
-		http.Error(w, "Error al conectar a la base de datos: "+err.Error(), http.StatusInternalServerError)
+		http.Error(w, "Error al conectar a la base de datos: "+err.Error(), http.StatusInternalServerError) // 500
 		return
 	}
 	defer conexionEstablecida.Close() // Cierra la conexion
